@@ -32,9 +32,9 @@ table snowball_output
 		summarizeBy: none
 		sourceColumn: month_roll
 
-		annotation SummarizationSetBy = Automatic
+		changedProperty = DataType
 
-		annotation UnderlyingDateTimeDataType = Date
+		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isDateTimeCustom":true}
 
