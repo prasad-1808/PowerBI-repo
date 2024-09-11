@@ -1,0 +1,32 @@
+relationship AutoDetected_c4d37c14-5c9d-485f-9b0f-9bf2f40e6e94
+	fromColumn: snowball_output.customer_key
+	toColumn: customer.customer_key
+
+relationship b9699139-0a29-4f4e-9ffc-8890269c3967
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Invoice Data'.payment_month
+	toColumn: LocalDateTable_2208382f-80e6-436e-be38-cc12c19f62a1.Date
+
+relationship AutoDetected_2d9baca9-a3ab-42df-beda-9d2333447ca8
+	fromColumn: snowball_output.product_key
+	toColumn: Product.product_key
+
+relationship bfe998ff-c937-4581-8d68-7eaadebbb165
+	joinOnDateBehavior: datePartOnly
+	fromColumn: final.Month_start
+	toColumn: LocalDateTable_10f23718-f726-44d8-8583-fb9424f4173f.Date
+
+relationship 12b44c59-1fa7-47fe-947b-da78b58c926b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Calendar.Date
+	toColumn: LocalDateTable_57adb3ac-e382-4761-a661-9568ee48ea91.Date
+
+relationship 21fc8bfc-1ac3-4f25-abdc-eff689f1c56e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Calendar.'EOW - Saturday'
+	toColumn: LocalDateTable_40502070-ff20-4bb3-8023-a00d6dbc58e1.Date
+
+relationship c225a767-2d6b-a599-d1f0-d267e1fa85a7
+	fromColumn: snowball_output.month_roll
+	toColumn: Calendar.Date
+

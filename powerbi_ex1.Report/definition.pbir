@@ -1,0 +1,9 @@
+{
+  "version": "4.0",
+  "datasetReference": {
+    "byPath": {
+      "path": "../powerbi_ex1.SemanticModel"
+    },
+    "byConnection": null
+  }
+}

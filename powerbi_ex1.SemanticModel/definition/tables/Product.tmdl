@@ -1,0 +1,48 @@
+table Product
+	lineageTag: c0340464-4f5d-4b86-8589-74916a228d38
+
+	column product_key
+		dataType: string
+		lineageTag: 1a27b64b-1198-40c2-b284-7bca86c96234
+		summarizeBy: none
+		sourceColumn: product_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_level_1
+		dataType: string
+		lineageTag: 6f239cb3-69fe-49a2-af64-5cdb43d96c94
+		summarizeBy: none
+		sourceColumn: product_level_1
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_level_2
+		dataType: string
+		lineageTag: 62344613-b43d-4890-99be-5985ecacbdab
+		summarizeBy: none
+		sourceColumn: product_level_2
+
+		annotation SummarizationSetBy = Automatic
+
+	column revenue_type
+		dataType: int64
+		formatString: 0
+		lineageTag: 3d27782e-c82a-447e-8fd1-5c91a9df951d
+		summarizeBy: none
+		sourceColumn: revenue_type
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Product = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\Admin\Downloads\Product.csv"),[Delimiter=",", Columns=4, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"product_key", type text}, {"product_level_1", type text}, {"product_level_2", type text}, {"revenue_type", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

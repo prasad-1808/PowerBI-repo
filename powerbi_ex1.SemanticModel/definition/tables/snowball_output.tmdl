@@ -1,0 +1,159 @@
+table snowball_output
+	lineageTag: 10bd936e-64bc-436e-941e-6a05854b1676
+
+	column snowball_key
+		dataType: string
+		lineageTag: e52729ac-6055-4c2a-81ae-fa2c4e16e1c6
+		summarizeBy: none
+		sourceColumn: snowball_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_key
+		dataType: string
+		lineageTag: 9428e8be-d18d-4e63-bc07-d1bb24e298f2
+		summarizeBy: none
+		sourceColumn: customer_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_key
+		dataType: string
+		lineageTag: 35e24f93-5c76-497c-889a-c7f1558377c3
+		summarizeBy: none
+		sourceColumn: product_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column month_roll
+		dataType: dateTime
+		formatString: dd-mm-yyyy
+		lineageTag: 7d78892a-fe69-4ee0-ae3f-f35ced835778
+		summarizeBy: none
+		sourceColumn: month_roll
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column period_type
+		dataType: string
+		lineageTag: 9a5cdf04-7b34-4bb5-8d5f-676d7f84304c
+		summarizeBy: none
+		sourceColumn: period_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column bop_arr
+		dataType: double
+		lineageTag: d499de88-a9e4-4ae5-9005-59805471852b
+		summarizeBy: sum
+		sourceColumn: bop_arr
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column customer_churn
+		dataType: double
+		lineageTag: 9a0fb611-2062-48f1-bc9e-d115a5146d19
+		summarizeBy: sum
+		sourceColumn: customer_churn
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column product_churn
+		dataType: double
+		lineageTag: cb10f205-8557-49d1-a2df-7d1f40115577
+		summarizeBy: sum
+		sourceColumn: product_churn
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column downsell
+		dataType: double
+		lineageTag: ce50b98c-9ba7-4e75-8d3f-dac5ff7af6bd
+		summarizeBy: sum
+		sourceColumn: downsell
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column grr
+		dataType: double
+		lineageTag: ae26df3c-fb4b-40d9-afd2-4f1f36819e4a
+		summarizeBy: sum
+		sourceColumn: grr
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column upsell
+		dataType: double
+		lineageTag: 54fe0df8-51db-43e3-8100-3cb4c4503864
+		summarizeBy: sum
+		sourceColumn: upsell
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column cross_sell
+		dataType: int64
+		formatString: 0
+		lineageTag: a18394f2-2dec-4b59-8335-ff070b63131d
+		summarizeBy: sum
+		sourceColumn: cross_sell
+
+		annotation SummarizationSetBy = Automatic
+
+	column nrr
+		dataType: double
+		lineageTag: 1fd7b3ae-76a8-441f-bf12-284b9c6133ec
+		summarizeBy: sum
+		sourceColumn: nrr
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column new_customer
+		dataType: double
+		lineageTag: ca9b7f9e-bb4f-4456-9b64-a2063187cf29
+		summarizeBy: sum
+		sourceColumn: new_customer
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column eop_arr
+		dataType: double
+		lineageTag: 8b2179c1-a142-49da-98f7-91045c3857ad
+		summarizeBy: sum
+		sourceColumn: eop_arr
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition snowball_output = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\Admin\Downloads\snowball_output.csv"),[Delimiter=",", Columns=15, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"snowball_key", type text}, {"customer_key", type text}, {"product_key", type text}, {"month_roll", type date}, {"period_type", type text}, {"bop_arr", type number}, {"customer_churn", type number}, {"product_churn", type number}, {"downsell", type number}, {"grr", type number}, {"upsell", type number}, {"cross_sell", Int64.Type}, {"nrr", type number}, {"new_customer", type number}, {"eop_arr", type number}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

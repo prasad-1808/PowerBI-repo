@@ -1,0 +1,229 @@
+table final
+	lineageTag: 9bf96929-6fcb-44b7-8325-4e2f43c9dcd4
+
+	column Month_start
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: f8d54c98-d208-47b6-a329-990ceff783e5
+		summarizeBy: none
+		sourceColumn: Month_start
+
+		variation Variation
+			isDefault
+			relationship: bfe998ff-c937-4581-8d68-7eaadebbb165
+			defaultHierarchy: LocalDateTable_10f23718-f726-44d8-8583-fb9424f4173f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Period_type
+		dataType: string
+		lineageTag: 2572b137-c20b-4b5a-958e-df57d4cfad4a
+		summarizeBy: none
+		sourceColumn: Period_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column BOP
+		dataType: double
+		lineageTag: b7a700a8-e9ca-4519-9bdb-b261d83d0000
+		summarizeBy: sum
+		sourceColumn: BOP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Customer_Churn
+		dataType: double
+		lineageTag: 88c2351d-b73e-4f8a-9552-a34c10b54708
+		summarizeBy: sum
+		sourceColumn: Customer_Churn
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '% of Churn'
+		dataType: double
+		lineageTag: 9d83ab37-76fd-4212-8d5b-4affe15928cf
+		summarizeBy: sum
+		sourceColumn: % of Churn
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Product_Churn
+		dataType: double
+		lineageTag: abb65c27-57cd-4477-902c-a53930edb2c7
+		summarizeBy: sum
+		sourceColumn: Product_Churn
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '% of Downgrade'
+		dataType: double
+		lineageTag: 170d45f4-97e6-44c5-b9d7-9966b0b7abe4
+		summarizeBy: sum
+		sourceColumn: % of Downgrade
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Downsell
+		dataType: double
+		lineageTag: 9debf454-6966-4285-90dd-97fd53be1b2d
+		summarizeBy: sum
+		sourceColumn: Downsell
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '% of Downsell'
+		dataType: double
+		lineageTag: 3f1636ce-010d-4c4d-8e7d-161d963ca531
+		summarizeBy: sum
+		sourceColumn: % of Downsell
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GRR
+		dataType: double
+		lineageTag: ad5d9467-9679-403a-b6e1-b416dd8464dd
+		summarizeBy: sum
+		sourceColumn: GRR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '% of GRR'
+		dataType: double
+		lineageTag: b87528a1-ba53-4568-b733-f10708c557d1
+		summarizeBy: sum
+		sourceColumn: % of GRR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Upsell
+		dataType: double
+		lineageTag: 24496cc3-c8df-427d-abc9-94256f5d6e75
+		summarizeBy: sum
+		sourceColumn: Upsell
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '% of Upsell'
+		dataType: double
+		lineageTag: ef6e8556-47d9-4727-be62-b1ea4fb4f43b
+		summarizeBy: sum
+		sourceColumn: % of Upsell
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Cross_sell
+		dataType: double
+		lineageTag: 108640a7-650b-4aec-a1a8-246c3eb9d7d8
+		summarizeBy: sum
+		sourceColumn: Cross_sell
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '% of Cross_sell'
+		dataType: double
+		lineageTag: ff3b9c4d-164e-44c4-929c-d9eb75e6a69d
+		summarizeBy: sum
+		sourceColumn: % of Cross_sell
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column NRR
+		dataType: double
+		lineageTag: 550b44b1-b8bd-44d5-90a8-18d556877d38
+		summarizeBy: sum
+		sourceColumn: NRR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '% of NRR'
+		dataType: double
+		lineageTag: eb1b0689-1908-40d6-ab51-87d3f1d21a12
+		summarizeBy: sum
+		sourceColumn: % of NRR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column New_Customer
+		dataType: double
+		lineageTag: d3fd702f-c4d3-4073-a07c-d22d38bb8f38
+		summarizeBy: sum
+		sourceColumn: New_Customer
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '% of New Customer'
+		dataType: double
+		lineageTag: 0d3d9d71-bca8-4124-a9d5-153eddb1b5e5
+		summarizeBy: sum
+		sourceColumn: % of New Customer
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column EOP_ARR
+		dataType: double
+		lineageTag: d0cde8df-05be-4e95-8339-2efdfed9882f
+		summarizeBy: sum
+		sourceColumn: EOP_ARR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '% of EOP_ARR'
+		dataType: double
+		lineageTag: 72c4d5d2-ecc6-41b1-8e51-373fee632806
+		summarizeBy: sum
+		sourceColumn: % of EOP_ARR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition final = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\Admin\Desktop\final.csv"),[Delimiter=",", Columns=21, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Month_start", type date}, {"Period_type", type text}, {"BOP", type number}, {"Customer_Churn", type number}, {"% of Churn", type number}, {"Product_Churn", type number}, {"% of Downgrade", type number}, {"Downsell", type number}, {"% of Downsell", type number}, {"GRR", type number}, {"% of GRR", type number}, {"Upsell", type number}, {"% of Upsell", type number}, {"Cross_sell", type number}, {"% of Cross_sell", type number}, {"NRR", type number}, {"% of NRR", type number}, {"New_Customer", type number}, {"% of New Customer", type number}, {"EOP_ARR", type number}, {"% of EOP_ARR", type number}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

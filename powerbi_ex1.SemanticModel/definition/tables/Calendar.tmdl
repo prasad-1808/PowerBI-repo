@@ -1,0 +1,227 @@
+table Calendar
+	lineageTag: 8bf07715-4b24-4c88-bf53-3bd320349be9
+
+	column Date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c86d0934-4aa0-4768-bd1d-638417466750
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [Date]
+
+		variation Variation
+			isDefault
+			relationship: 12b44c59-1fa7-47fe-947b-da78b58c926b
+			defaultHierarchy: LocalDateTable_57adb3ac-e382-4761-a661-9568ee48ea91.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column DateAsInteger
+		dataType: string
+		lineageTag: 6d9d1e59-72b5-4505-8fed-16d7507d0bc9
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [DateAsInteger]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: string
+		lineageTag: 1740b829-eb0f-4faf-b895-71bf929ffa2c
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year less 1'
+		dataType: double
+		lineageTag: 07ad2aee-3f20-4fab-97a9-7f709d2383d8
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [Year less 1]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MonthYear
+		dataType: string
+		lineageTag: d9f4ca44-8776-4069-b947-d63c3954534d
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [MonthYear]
+
+		annotation SummarizationSetBy = Automatic
+
+	column QuarterYear
+		dataType: string
+		lineageTag: 4c4a555f-af1b-44af-8844-34bba406bc8d
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [QuarterYear]
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthNo
+		dataType: int64
+		formatString: 0
+		lineageTag: 0f58a928-6363-4d8c-a522-b8995ce2ee48
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [MonthNo]
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthText
+		dataType: string
+		lineageTag: 6e81184c-65a0-4826-99df-42b660671bf8
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [MonthText]
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearMonth
+		dataType: string
+		lineageTag: ac48aac5-996c-476b-9430-6472b3e030b6
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [YearMonth]
+
+		annotation SummarizationSetBy = Automatic
+
+	column YMInt
+		dataType: int64
+		formatString: 0
+		lineageTag: 9d0f1db2-dc39-4042-91c0-f0fe98ccd720
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [YMInt]
+
+		annotation SummarizationSetBy = Automatic
+
+	column WeekdayNo
+		dataType: int64
+		formatString: 0
+		lineageTag: ac1485a3-d705-4559-9b38-a6a9e3888197
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [WeekdayNo]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year & Month'
+		dataType: string
+		lineageTag: 5e916d46-c8db-4fa6-b3ab-713210f55212
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [Year & Month]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: string
+		lineageTag: b2416cc1-00da-484a-a9fa-6d71b484fed9
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [Month]
+
+		annotation SummarizationSetBy = Automatic
+
+	column WeekNo
+		dataType: int64
+		formatString: 0
+		lineageTag: ed8cb7ed-5176-44db-8a27-e3d81bb58699
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [WeekNo]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'EOW - Saturday'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a19bd273-321f-4179-8bb1-fcc627b84e07
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [EOW - Saturday]
+
+		variation Variation
+			isDefault
+			relationship: 21fc8bfc-1ac3-4f25-abdc-eff689f1c56e
+			defaultHierarchy: LocalDateTable_40502070-ff20-4bb3-8023-a00d6dbc58e1.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Weekday
+		dataType: string
+		lineageTag: 50c8894b-cc98-4f1e-9235-c8f874624af3
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [Weekday]
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayNo
+		dataType: string
+		lineageTag: 015d617e-87d9-4cc1-b9d0-8b9672b50fce
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [DayNo]
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayMonth
+		dataType: string
+		lineageTag: 9dc920b7-37cc-4e1b-9f99-f10bc637f59a
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [DayMonth]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Calendar = calculated
+		mode: import
+		source = ```
+				ADDCOLUMNS(CALENDAR(date(2017,01,01),date(2026,12,31)),
+				"DateAsInteger", FORMAT ( [Date], "YYYYMMDD" ), 
+				"Year", FORMAT([Date], "yyyy"), 
+				"Year less 1", FORMAT([Date], "yyyy")-1,
+				"MonthYear", FORMAT([Date],"mmm yy"),
+				"QuarterYear", FORMAT([Date],"yyyy \QQ"), 
+				"MonthNo", MONTH([Date]),
+				"MonthText", FORMAT([Date], "mmm"),
+				"YearMonth", FORMAT([Date], "MMMM-YYYY"),
+				"YMInt", 13 * YEAR([Date]) + MONTH([Date]),
+				"WeekdayNo", WEEKDAY([Date],2),
+				"Year & Month", FORMAT([Date],"MMM-YY"),
+				"Month", FORMAT([Date], "mmmm"), 
+				"WeekNo", WEEKNUM([Date]),
+				"EOW - Saturday", [Date]+7-WEEKDAY([Date]-7),
+				"Weekday", FORMAT([Date], "dddd"), 
+				"DayNo", FORMAT([Date], "d"),
+				"DayMonth", FORMAT([Date], "dd mmm")
+				)
+				```
+
+	annotation PBI_Id = f99813983fbb4eb6bda2647f0518128f
+
