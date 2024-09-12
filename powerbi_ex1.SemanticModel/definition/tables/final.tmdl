@@ -8,11 +8,6 @@ table final
 		summarizeBy: none
 		sourceColumn: Month_start
 
-		variation Variation
-			isDefault
-			relationship: bfe998ff-c937-4581-8d68-7eaadebbb165
-			defaultHierarchy: LocalDateTable_10f23718-f726-44d8-8583-fb9424f4173f.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
@@ -214,6 +209,27 @@ table final
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CohortYear = ```
+			
+			CALCULATE(
+			    MIN('snowball_output'[month_roll]),
+			    ALLEXCEPT(snowball_output, snowball_output[customer_key])
+			)
+			 
+			```
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 5cdc0aca-2d4a-4bd1-832e-2baefc0d8eb9
+		summarizeBy: none
+		isDataTypeInferred
+
+		variation Variation
+			isDefault
+			relationship: 50d382bf-82b5-48c7-a909-46cecd877bec
+			defaultHierarchy: LocalDateTable_9b427778-df13-4c83-a1dc-91d4886e71f5.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
 
 	partition final = m
 		mode: import

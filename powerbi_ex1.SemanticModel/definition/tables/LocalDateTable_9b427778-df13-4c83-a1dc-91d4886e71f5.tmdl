@@ -1,13 +1,13 @@
-table LocalDateTable_10f23718-f726-44d8-8583-fb9424f4173f
+table LocalDateTable_9b427778-df13-4c83-a1dc-91d4886e71f5
 	isHidden
 	showAsVariationsOnly
-	lineageTag: b9255f6b-8876-40a8-bc04-fb9db438b599
+	lineageTag: 1dede27b-76fc-401e-8152-682a8bd2e18a
 
 	column Date
 		dataType: dateTime
 		isHidden
 		formatString: General Date
-		lineageTag: c932d6b9-3078-4733-af6f-25b8999817ac
+		lineageTag: 7ecf9c56-da10-4d75-8f4f-fd79f01475b1
 		dataCategory: PaddedDateTableDates
 		summarizeBy: none
 		isNameInferred
@@ -19,7 +19,7 @@ table LocalDateTable_10f23718-f726-44d8-8583-fb9424f4173f
 		dataType: int64
 		isHidden
 		formatString: 0
-		lineageTag: 205291db-f585-43df-b5ad-eadd55d1e410
+		lineageTag: e857ec16-7c74-49b1-9517-36ca200795fb
 		dataCategory: Years
 		summarizeBy: none
 
@@ -31,7 +31,7 @@ table LocalDateTable_10f23718-f726-44d8-8583-fb9424f4173f
 		dataType: int64
 		isHidden
 		formatString: 0
-		lineageTag: a969d6fe-9191-4755-ac56-fae1a3ab1a57
+		lineageTag: ff01b092-f498-4c52-b7f8-966a4902865c
 		dataCategory: MonthOfYear
 		summarizeBy: none
 
@@ -42,7 +42,7 @@ table LocalDateTable_10f23718-f726-44d8-8583-fb9424f4173f
 	column Month = FORMAT([Date], "MMMM")
 		dataType: string
 		isHidden
-		lineageTag: cb9710e1-6801-41c6-ab1c-2f56cabcf897
+		lineageTag: 1077a76e-9dd8-44e4-8afc-99c1c6004854
 		dataCategory: Months
 		summarizeBy: none
 		sortByColumn: MonthNo
@@ -55,7 +55,7 @@ table LocalDateTable_10f23718-f726-44d8-8583-fb9424f4173f
 		dataType: int64
 		isHidden
 		formatString: 0
-		lineageTag: aa3ca2f3-abfa-47e6-8b1b-458327cb7d26
+		lineageTag: 9599e270-5e8c-4675-83b0-4abd1374de80
 		dataCategory: QuarterOfYear
 		summarizeBy: none
 
@@ -66,7 +66,7 @@ table LocalDateTable_10f23718-f726-44d8-8583-fb9424f4173f
 	column Quarter = "Qtr " & [QuarterNo]
 		dataType: string
 		isHidden
-		lineageTag: bc533cd3-4216-4450-9a34-4beace132fdf
+		lineageTag: c0f557a7-db0f-451f-b6c4-021a80a46a21
 		dataCategory: Quarters
 		summarizeBy: none
 		sortByColumn: QuarterNo
@@ -79,7 +79,7 @@ table LocalDateTable_10f23718-f726-44d8-8583-fb9424f4173f
 		dataType: int64
 		isHidden
 		formatString: 0
-		lineageTag: d763cae9-0cf4-4dc7-a215-0db2a19ddcb3
+		lineageTag: 95b02479-90db-49ba-af11-fb51e75f124c
 		dataCategory: DayOfMonth
 		summarizeBy: none
 
@@ -88,29 +88,29 @@ table LocalDateTable_10f23718-f726-44d8-8583-fb9424f4173f
 		annotation TemplateId = Day
 
 	hierarchy 'Date Hierarchy'
-		lineageTag: 0c40d245-4766-4930-aef7-4210a9997861
+		lineageTag: 22fbfcbd-5b09-4af4-b2e2-c5cb0bc31f30
 
 		level Year
-			lineageTag: 6220df08-1a9c-43cc-87a8-ebd9f638ead2
+			lineageTag: fa79ea5c-5458-40a6-b10b-a79a9eac2af8
 			column: Year
 
 		level Quarter
-			lineageTag: 8766cbce-651d-4d5c-b6f3-f3636851606a
+			lineageTag: 16ed0971-1f3b-41d0-8c18-877977ef993f
 			column: Quarter
 
 		level Month
-			lineageTag: e899b39f-2b24-44fd-8c3b-b2048006f239
+			lineageTag: 421da3c5-2434-44af-86e5-14a043956332
 			column: Month
 
 		level Day
-			lineageTag: c0f38c17-552d-45b1-b2c9-17413104ba22
+			lineageTag: 905fae7d-f50c-4f9b-9b37-6211a8323a47
 			column: Day
 
 		annotation TemplateId = DateHierarchy
 
-	partition LocalDateTable_10f23718-f726-44d8-8583-fb9424f4173f = calculated
+	partition LocalDateTable_9b427778-df13-4c83-a1dc-91d4886e71f5 = calculated
 		mode: import
-		source = Calendar(Date(Year(MIN('final'[Month_start])), 1, 1), Date(Year(MAX('final'[Month_start])), 12, 31))
+		source = Calendar(Date(Year(MIN('final'[CohortYear])), 1, 1), Date(Year(MAX('final'[CohortYear])), 12, 31))
 
 	annotation __PBI_LocalDateTable = true
 
